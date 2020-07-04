@@ -1,0 +1,25 @@
+entity Order {
+	orderNumber Integer required unique,
+    orderDate Instant required,
+    processDate LocalDate
+}
+
+entity LineItem {
+	quantity Integer required
+}
+
+// defining multiple OneToMany relationships with comments
+relationship OneToMany {
+    Order{items(name)} to LineItem
+}
+// Set pagination options
+paginate Order with infinite-scroll
+
+// Use Data Transfert Objects (DTO)
+// dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl
+
+// Set an angular suffix
+// angularSuffix * with mySuffix
