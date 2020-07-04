@@ -1,0 +1,33 @@
+{
+  "name": "LineItem",
+  "fields": [
+    {
+      "fieldName": "quantity",
+      "fieldType": "Integer",
+      "fieldValidateRules": [
+        "required"
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "order",
+      "otherEntityRelationshipName": "items",
+      "relationshipName": "order",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20200704072302",
+  "entityTableName": "line_item",
+  "dto": "no",
+  "pagination": "no",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "labellaStoreAppOrder",
+  "applications": "*",
+  "microserviceName": "labellaStoreAppOrder"
+}
