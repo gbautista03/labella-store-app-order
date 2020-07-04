@@ -1,0 +1,44 @@
+{
+  "name": "Order",
+  "fields": [
+    {
+      "fieldName": "orderNumber",
+      "fieldType": "Integer",
+      "fieldValidateRules": [
+        "required",
+        "unique"
+      ]
+    },
+    {
+      "fieldName": "orderDate",
+      "fieldType": "Instant",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "processDate",
+      "fieldType": "LocalDate"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "lineItem",
+      "otherEntityRelationshipName": "order",
+      "relationshipName": "items"
+    }
+  ],
+  "changelogDate": "20200704072202",
+  "entityTableName": "order",
+  "dto": "no",
+  "pagination": "infinite-scroll",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "labellaStoreAppOrder",
+  "applications": "*",
+  "microserviceName": "labellaStoreAppOrder"
+}
